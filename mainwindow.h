@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include "sign_up_page.h"
 #include "user_page.h"
+#include "mythread.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -30,7 +31,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Sign_Up_Page *sign_page;
-    User_Page *user;
-    //QNetworkReply *reply;
+    User_Page *user_page;
 };
 #endif // MAINWINDOW_H

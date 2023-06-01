@@ -13,12 +13,14 @@ SOURCES += \
     mainwindow.cpp \
     mythread.cpp \
     sign_up_page.cpp \
+    user_account.cpp \
     user_page.cpp
 
 HEADERS += \
     mainwindow.h \
     mythread.h \
     sign_up_page.h \
+    user_account.h \
     user_page.h
 
 FORMS += \
