@@ -2,6 +2,9 @@
 #define SIGN_UP_PAGE_H
 
 
+#include <QJsonObject>
+#include <QMessageBox>
+#include "mythread.h"
 #include <QDialog>
 
 namespace Ui {

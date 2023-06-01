@@ -185,7 +185,7 @@ QCheckBox::indicator:disabled
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>120</x>
      <y>180</y>
      <width>121</width>
      <height>41</height>

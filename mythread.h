@@ -12,7 +12,6 @@
 #include <QThread>
 #include <QTcpSocket>
 #include <QDebug>
-
 class MyThread : public QThread
 {
     Q_OBJECT
@@ -30,6 +29,8 @@ public slots:
 
 private:
    QUrl temp;
+public:
+   QJsonObject jason_temp_thread;
 };
 
 #endif

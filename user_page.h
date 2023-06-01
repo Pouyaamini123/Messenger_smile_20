@@ -2,6 +2,7 @@
 #define USER_PAGE_H
 
 #include <QDialog>
+#include <QJsonObject>
 
 namespace Ui {
 class User_Page;
