@@ -1,14 +1,9 @@
 #ifndef USER_ACCOUNT_H
 #define USER_ACCOUNT_H
-
-#include <QObject>
+#include <QString>
 #include <QJsonObject>
-class user_account : public QObject
-{
-    Q_OBJECT
-public:
-    explicit user_account(QObject *parent = nullptr);
-    QJsonObject mm;
-signals:
-};
+extern QString token;
+extern QString username_glob;
+extern QString password_glob;
+extern QJsonObject jason_asli_glob;
 #endif // USER_ACCOUNT_H

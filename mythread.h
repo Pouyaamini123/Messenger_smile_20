@@ -12,6 +12,9 @@
 #include <QThread>
 #include <QTcpSocket>
 #include <QDebug>
+#include <QEventLoop>
+#include <QTimer>
+#include "user_account.h"
 class MyThread : public QThread
 {
     Q_OBJECT
@@ -24,9 +27,7 @@ signals:
     void error(QTcpSocket::SocketError socketerror);
 
 public slots:
-//    void readyRead();
-//    void disconnected();
-
+    static bool isOnline();
 private:
    QUrl temp;
 public:
