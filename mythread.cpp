@@ -20,6 +20,9 @@ void MyThread::run()
             QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
             QJsonObject jsonObj = jsonDoc.object();
             //user_account user_account_object;
+
+            //this->jason_asli_glob = jsonObj;
+
             jason_temp_thread = jsonObj;
             QString message = jsonObj.value("message").toString();
             QString code = jsonObj.value("code").toString();
@@ -36,5 +39,25 @@ void MyThread::run()
         reply->deleteLater();
     });
     exec();
+}
+
+bool MyThread::isOnline()
+{
+    bool retVal = false;
+    QNetworkAccessManager nam;
+    QNetworkRequest req(QUrl("http://www.google.com"));
+    QNetworkReply* reply = nam.get(req);
+    QEventLoop loop;
+    QTimer timeoutTimer;
+    connect(&timeoutTimer, SIGNAL(timeout()), &loop, SLOT(quit()));
+    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+    timeoutTimer.setSingleShot(true);
+    timeoutTimer.start(3000);
+    loop.exec();
+    if (reply->bytesAvailable())
+    {
+        retVal = true;
+    }
+    return retVal;
 }
 

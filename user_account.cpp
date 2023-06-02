@@ -1,7 +1,5 @@
 #include "user_account.h"
-
-user_account::user_account(QObject *parent)
-    : QObject{parent}
-{
-
-}
+QString token;
+QString username_glob;
+QString password_glob;
+QJsonObject jason_asli_glob;
