@@ -9,7 +9,7 @@
 #include <QJsonObject>
 #include "mythread.h"
 #include "user_account.h"
-QString ali;
+
 User_Page::User_Page(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::User_Page)
@@ -38,16 +38,19 @@ void User_Page::on_pushButton_clicked()
         connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
         thread->start();
         thread->wait();
+
+
         QJsonObject temp  = thread->jason_temp_thread;
         QString message = temp.value("message").toString();
         QString code = temp.value("code").toString();
-        if (code == "200")
+        if (code == "200"){
             QMessageBox::information(this , code , message);
+        this->close();}
         if (code == "401")
             QMessageBox::warning(this , code , message);
         ui->lineEdit_2->setText("");
         ui->lineEdit->setText("");
-        this->close();
+
     }
    else
     {
@@ -112,3 +115,128 @@ void User_Page::on_pushButton_2_clicked()
     }
 }
 
+
+void User_Page::on_pushButton_7_clicked()
+{
+    //list
+}
+
+
+void User_Page::on_pushButton_8_clicked()
+{
+    if(ui->comboBox_2->currentText()=="Channel" )
+    {
+        if(MyThread::isOnline()) {
+             QUrl send("http://api.barafardayebehtar.ml:8080/joinchannel?token=" +token+"&channel_name=" + ui->lineEdit_3->text());
+             MyThread *thread = new MyThread(send,this);
+             connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+             thread->start();
+             thread->wait();
+             QJsonObject temp  = thread->jason_temp_thread;
+             QString message = temp.value("message").toString();
+             QString code = temp.value("code").toString();
+             if (code == "200"){
+                 QMessageBox::information(this , code , message);
+             }
+             if (code == "204")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit_2->setText("");
+             if (code == "404")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit->setText("");
+         }
+        else
+        {
+            QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
+        }
+    }
+
+    if(ui->comboBox_2->currentText()=="Group")
+    {
+        if(MyThread::isOnline()) {
+               QUrl send("http://api.barafardayebehtar.ml:8080/joingroup?token=" +token+"&group_name=" + ui->lineEdit_3->text());
+             MyThread *thread = new MyThread(send,this);
+             connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+             thread->start();
+             thread->wait();
+
+             QJsonObject temp  = thread->jason_temp_thread;
+             QString message = temp.value("message").toString();
+             QString code = temp.value("code").toString();
+             if(code == "200"){
+                 QMessageBox::information(this , code , message);
+                }
+             if (code == "204")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit_2->setText("");
+             if (code == "404")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit->setText("");
+             this->close();
+         }
+        else
+        {
+            QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
+        }
+    }
+}
+
+
+void User_Page::on_pushButton_6_clicked()
+{
+
+    if(ui->comboBox->currentText()=="Channel")
+    {
+
+        if(MyThread::isOnline()) {
+               QUrl send("http://api.barafardayebehtar.ml:8080/createchannel?token=" +token+"&channel_name=" + ui->lineEdit->text() + "&chnnel_title="+ui->lineEdit_2->text());
+             MyThread *thread = new MyThread(send,this);
+             connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+             thread->start();
+             thread->wait();
+             QJsonObject temp  = thread->jason_temp_thread;
+             QString message = temp.value("message").toString();
+             QString code = temp.value("code").toString();
+             if (code == "200"){
+                 QMessageBox::information(this , code , message);
+             }
+             if (code == "204")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit_2->setText("");
+             if (code == "404");
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit->setText("");
+         }
+        else
+        {
+            QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
+        }
+    }
+
+    if(ui->comboBox->currentText()=="Group")
+    {
+        if(MyThread::isOnline()) {
+               QUrl send("http://api.barafardayebehtar.ml:8080/creategroup?token=" +token+"&group_name=" + ui->lineEdit->text() + "&group_title="+ui->lineEdit_2->text());
+             MyThread *thread = new MyThread(send,this);
+             connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+             thread->start();
+             thread->wait();
+             QJsonObject temp  = thread->jason_temp_thread;
+             QString message = temp.value("message").toString();
+             QString code = temp.value("code").toString();
+             if (code == "200"){
+                 QMessageBox::information(this , code , message);
+             }
+             if (code == "204")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit_2->setText("");
+             if (code == "404")
+                 QMessageBox::warning(this , code , message);
+             ui->lineEdit->setText("");
+         }
+        else
+        {
+            QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
+        }
+    }
+}

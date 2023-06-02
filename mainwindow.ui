@@ -239,8 +239,8 @@ QCheckBox::indicator:disabled
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>340</y>
+      <x>222</x>
+      <y>330</y>
       <width>279</width>
       <height>41</height>
      </rect>
@@ -255,7 +255,7 @@ QCheckBox::indicator:disabled
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>350</x>
       <y>270</y>
       <width>141</width>
       <height>31</height>
@@ -270,7 +270,7 @@ QCheckBox::indicator:disabled
      <rect>
       <x>250</x>
       <y>110</y>
-      <width>281</width>
+      <width>331</width>
       <height>151</height>
      </rect>
     </property>
@@ -319,6 +319,19 @@ font: 700 24pt &quot;Segoe UI&quot;;</string>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>420</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
