@@ -434,4 +434,3 @@ void User_Page::on_pushButton_6_clicked()
         QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
     }
 }
-
