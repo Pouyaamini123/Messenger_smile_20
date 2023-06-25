@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>vector-logout-sign-icon.jpg</file>
+        <file>download (1).png</file>
+        <file>download (2).png</file>
+        <file>images (1).png</file>
+        <file>download.jfif</file>
+        <file>download.png</file>
+    </qresource>
+</RCC>

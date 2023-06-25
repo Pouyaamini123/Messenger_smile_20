@@ -6,4 +6,6 @@ extern QString token;
 extern QString username_glob;
 extern QString password_glob;
 extern QJsonObject jason_asli_glob;
+extern QString name_send;
+extern QString type_send;
 #endif // USER_ACCOUNT_H
