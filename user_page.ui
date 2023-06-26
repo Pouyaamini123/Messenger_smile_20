@@ -2224,17 +2224,32 @@ QScrollBar::sub-page:vertical
     </property>
     <item>
      <property name="text">
-      <string>User</string>
+      <string>noun</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Group</string>
+      <string>user</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Channel</string>
+      <string>group</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>channel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
      </property>
     </item>
    </widget>
