@@ -9,4 +9,5 @@ extern QJsonObject jason_asli_glob;
 extern QString name_send;
 extern QString type_send;
 extern QString user_name;
+
 #endif // USER_ACCOUNT_H
