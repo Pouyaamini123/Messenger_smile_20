@@ -14,9 +14,11 @@ User_Page::User_Page(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::User_Page)
 {
+    send_p = new send_page;
     this->creat = 0;
     this->join = 0;
     this->list = 0;
+    this->sendd=0;
     ui->setupUi(this);
     ui->groupBox->hide();
     ui->groupBox_4->hide();
@@ -63,6 +65,7 @@ void User_Page::on_pushButton_5_clicked()
 {
     if (creat == 0)
     {
+        ui->groupBox_6->hide();
         ui->groupBox_4->hide();
         ui->groupBox_5->hide();
         ui->groupBox->show();
@@ -70,6 +73,7 @@ void User_Page::on_pushButton_5_clicked()
     }
     else
     {
+        ui->groupBox_6->hide();
         ui->groupBox_5->hide();
         ui->groupBox_4->hide();
         ui->groupBox->hide();
@@ -82,6 +86,7 @@ void User_Page::on_pushButton_3_clicked()
 {
     if (join == 0)
     {
+        ui->groupBox_6->hide();
         ui->groupBox_4->show();
         ui->groupBox_5->hide();
         ui->groupBox->hide();
@@ -89,6 +94,7 @@ void User_Page::on_pushButton_3_clicked()
     }
     else
     {
+        ui->groupBox_6->hide();
         ui->groupBox_5->hide();
         ui->groupBox_4->hide();
         ui->groupBox->hide();
@@ -101,6 +107,7 @@ void User_Page::on_pushButton_2_clicked()
 {
     if (list == 0)
     {
+        ui->groupBox_6->hide();
         ui->groupBox_5->show();
         ui->groupBox_4->hide();
         ui->groupBox->hide();
@@ -108,6 +115,7 @@ void User_Page::on_pushButton_2_clicked()
     }
     else
     {
+        ui->groupBox_6->hide();
          ui->groupBox_5->hide();
          ui->groupBox_4->hide();
          ui->groupBox->hide();
@@ -172,7 +180,8 @@ void User_Page::on_pushButton_7_clicked()
 
     if(ui->comboBox_3->currentText()=="Group")
     {
-        if(MyThread::isOnline()) {
+        if(MyThread::isOnline())
+        {
                QUrl send("http://api.barafardayebehtar.ml:8080/getgrouplist?token=" +token);
              MyThread *thread = new MyThread(send,this);
              connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
@@ -217,7 +226,7 @@ void User_Page::on_pushButton_7_clicked()
              {
                  QMessageBox::warning(this , code , message);
              }
-         }
+        }
         else
         {
             QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
@@ -428,9 +437,38 @@ void User_Page::on_pushButton_6_clicked()
                  ui->lineEdit->setText("");
              }
         }
-     }
     else
     {
         QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
     }
+    }
 }
+
+void User_Page::on_pushButton_4_clicked()
+{
+    if (sendd == 0)
+    {
+        ui->groupBox_6->show();
+        ui->groupBox_4->hide();
+        ui->groupBox_5->hide();
+        ui->groupBox->hide();
+        sendd = 1;
+    }
+    else
+    {
+         ui->groupBox_6->hide();
+         ui->groupBox_5->hide();
+         ui->groupBox_4->hide();
+         ui->groupBox->hide();
+         sendd = 0;
+    }
+}
+
+
+void User_Page::on_pushButton_14_clicked()
+{
+    type_send = ui->comboBox_4->currentText();
+    name_send = ui->lineEdit_4->text();
+    send_p->show();
+}
+

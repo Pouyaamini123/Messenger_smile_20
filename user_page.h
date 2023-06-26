@@ -3,7 +3,7 @@
 //#include <QtNetwork/QNetworkConfigurationManager>
 #include <QDialog>
 #include <QJsonObject>
-#include "user_account.h"
+#include "send_page.h"
 namespace Ui {
 class User_Page;
 }
@@ -31,11 +31,17 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_14_clicked();
+
 private:
     int creat;
     int join;
     int list;
+    int sendd;
     Ui::User_Page *ui;
+    send_page * send_p;
 };
 
 #endif // USER_PAGE_H

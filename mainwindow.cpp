@@ -43,6 +43,7 @@ void MainWindow::on_pushButton_2_clicked()
             Sleep(40);
             ui->progressBar->setValue(i);
         }
+        user_name =ui->lineEdit->text();
         QUrl send("http://api.barafardayebehtar.ml:8080/login?username="+ui->lineEdit->text()+"&password="+ui->lineEdit_2->text());
         MyThread *thread = new MyThread(send,this);
         connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));

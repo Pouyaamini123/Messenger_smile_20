@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>812</width>
-    <height>812</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,13 +60,11 @@ QLabel
 /*-----QPushButton-----*/
 QPushButton
 {
-	background-color: #d10000;
-	color: #fff;
-	font-weight: bold;
-	border: 1px solid #d10000;  
-	border-radius: 2px;
-	padding: 5px;
-
+background-color: #a61e4d;
+  color: #efefef;
+  border: none;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 
@@ -182,66 +180,13 @@ QCheckBox::indicator:disabled
 }
 </string>
   </property>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>791</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Log Out</string>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>Creat </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>Join</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>List</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>Send</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>180</y>
      <width>812</width>
-     <height>251</height>
+     <height>291</height>
     </rect>
    </property>
    <property name="title">
@@ -1131,9 +1076,9 @@ QScrollBar::sub-page:vertical
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>180</y>
      <width>812</width>
-     <height>501</height>
+     <height>291</height>
     </rect>
    </property>
    <property name="title">
@@ -1157,7 +1102,7 @@ QScrollBar::sub-page:vertical
      <rect>
       <x>140</x>
       <y>80</y>
-      <width>561</width>
+      <width>600</width>
       <height>171</height>
      </rect>
     </property>
@@ -1431,6 +1376,9 @@ QScrollBar::sub-page:vertical
       </widget>
      </item>
      <item>
+      <layout class="QHBoxLayout" name="horizontalLayout"/>
+     </item>
+     <item>
       <widget class="QScrollBar" name="verticalScrollBar">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -1469,9 +1417,9 @@ QScrollBar::sub-page:vertical
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
-     <width>812</width>
-     <height>661</height>
+     <y>180</y>
+     <width>811</width>
+     <height>291</height>
     </rect>
    </property>
    <property name="title">
@@ -2034,7 +1982,7 @@ QScrollBar::sub-page:vertical
 </string>
     </property>
     <property name="text">
-     <string/>
+     <string> Thread started</string>
     </property>
     <property name="placeholderText">
      <string>Name ...</string>
@@ -2054,7 +2002,284 @@ QScrollBar::sub-page:vertical
     </property>
    </widget>
   </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/prefix1/download (1).png</normaloff>:/new/prefix1/download (1).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/prefix1/images (1).png</normaloff>:/new/prefix1/images (1).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/prefix1/vector-logout-sign-icon.jpg</normaloff>:/new/prefix1/vector-logout-sign-icon.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/prefix1/download (2).png</normaloff>:/new/prefix1/download (2).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>120</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/new/prefix1/download.png</normaloff>:/new/prefix1/download.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>95</width>
+     <height>95</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_9">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>130</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>join</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_10">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>130</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>send</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_11">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>130</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>list</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_12">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>130</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>creat</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_13">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>130</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>log out</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>812</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>send</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_14">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>200</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ok</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_4">
+    <property name="geometry">
+     <rect>
+      <x>291</x>
+      <y>40</y>
+      <width>211</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>noun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>user</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>group</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>channel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>70</y>
+      <width>211</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>70</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>enter name</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

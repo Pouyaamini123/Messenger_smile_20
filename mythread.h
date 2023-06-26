@@ -23,6 +23,10 @@ public:
 
     void run();
 
+    static void print()
+    {
+        qDebug() << "Hello\n";
+    }
 signals:
     void error(QTcpSocket::SocketError socketerror);
 
@@ -32,6 +36,7 @@ private:
    QUrl temp;
 public:
    QJsonObject jason_temp_thread;
+
 };
 
 #endif
