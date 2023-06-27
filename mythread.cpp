@@ -27,11 +27,11 @@ void MyThread::run()
             QString message = jsonObj.value("message").toString();
             QString code = jsonObj.value("code").toString();
 
-            qDebug()<<"Message:"<<message<<", code: "<<code;
+            //qDebug()<<"Message:"<<message<<", code: "<<code;
             this->exit();
         } else {
             // If there wa's an error, display the error message
-            qDebug() << "Error:" << reply->errorString();
+            //qDebug() << "Error:" << reply->errorString();
             this->exit();
         }
 

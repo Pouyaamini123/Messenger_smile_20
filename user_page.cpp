@@ -470,5 +470,6 @@ void User_Page::on_pushButton_14_clicked()
     type_send = ui->comboBox_4->currentText();
     name_send = ui->lineEdit_4->text();
     send_p->show();
+    emit send_p->starty();
 }
 
