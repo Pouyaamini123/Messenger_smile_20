@@ -8,7 +8,6 @@ MyThread::MyThread(QUrl url,QObject *parent) :
 void MyThread::run()
 {
 
-    qDebug() << " Thread started";
     QNetworkAccessManager manager;
     QNetworkReply *reply = manager.get(QNetworkRequest(this->temp)); // Send GET request
     QObject::connect(reply, &QNetworkReply::finished, [&]()
@@ -16,7 +15,6 @@ void MyThread::run()
         if (reply->error() == QNetworkReply::NoError) {
             // If the request was successful, read the response
             QByteArray data = reply->readAll();
-            qDebug() << "Response:" << data;
             QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
             QJsonObject jsonObj = jsonDoc.object();
             //user_account user_account_object;
@@ -27,11 +25,11 @@ void MyThread::run()
             QString message = jsonObj.value("message").toString();
             QString code = jsonObj.value("code").toString();
 
-            //qDebug()<<"Message:"<<message<<", code: "<<code;
+
             this->exit();
         } else {
             // If there wa's an error, display the error message
-            //qDebug() << "Error:" << reply->errorString();
+
             this->exit();
         }
 

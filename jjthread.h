@@ -10,7 +10,7 @@ class jjthread : public QThread
 public:
     explicit jjthread(QObject *parent = nullptr);
 signals:
-    void khalife(QString);
+    void khalife();
 };
 
 #endif // JJTHREAD_H

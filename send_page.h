@@ -19,8 +19,8 @@ public:
 signals:
     void starty();
 public slots:
-    void put(QString);
-        void start_thread();
+    void put();
+    void start_thread();
 private slots:
     void on_pushButton_clicked();
 
