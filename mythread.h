@@ -20,7 +20,10 @@ class MyThread : public QThread
     Q_OBJECT
 public:
     explicit MyThread(QUrl url,QObject *parent = nullptr);
+    explicit MyThread(QObject *parent = nullptr)
+    {
 
+    }
     void run();
 
     static void print()
@@ -29,7 +32,6 @@ public:
     }
 signals:
     void error(QTcpSocket::SocketError socketerror);
-
 public slots:
     static bool isOnline();
 private:
