@@ -1,15 +1,16 @@
-#include "mainwindow.h"
+#include "..\header\mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFile>
 #include <QStyle>
 #include<windows.h>
-
+using namespace std;
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     sign_page = new Sign_Up_Page;
     user_page = new User_Page;
     ui->progressBar->hide();
+//    connect (this , SIGNAL(khelafat()), this ,SLOT(write_in_files()));
 }
 
 MainWindow::~MainWindow()
@@ -95,7 +96,13 @@ void MainWindow::on_pushButton_2_clicked()
         QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
     }
 
+    this->write_in_files();
+}
 
+void MainWindow::write_in_files()
+{
+    thread_write * ptr = new thread_write();
+    ptr->start();
 }
 
 

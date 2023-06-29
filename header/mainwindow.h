@@ -13,6 +13,7 @@
 #include "sign_up_page.h"
 #include "user_page.h"
 #include "user_account.h"
+#include "..\header\thread_write.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -28,11 +29,13 @@ public:
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
-
-
+    void write_in_files();
+signals:
+    void khelafat();
 private:
     Ui::MainWindow *ui;
     Sign_Up_Page *sign_page;
     User_Page *user_page;
+
 };
 #endif // MAINWINDOW_H

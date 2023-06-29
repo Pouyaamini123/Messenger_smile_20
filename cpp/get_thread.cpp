@@ -1,4 +1,4 @@
-#include "get_thread.h"
+#include "..\header\get_thread.h"
 
 get_thread::get_thread()
 {
@@ -9,7 +9,7 @@ void get_thread::run()
 {
     while(true)
     {
-        QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+name_send);
+        QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+contact_send);
         MyThread *thread_2 = new MyThread(send_2,this);
         connect(thread_2, SIGNAL(finished()), thread_2, SLOT(deleteLater()));
         thread_2->start();
@@ -32,8 +32,7 @@ void get_thread::run()
         if(h!=count)
         {
             h=count;
-            khalife();
+            emit khalife();
         }
-
     }
 }

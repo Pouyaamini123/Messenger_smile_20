@@ -1,8 +1,9 @@
-#include "send_page.h"
+#include "..\header\send_page.h"
 #include "ui_send_page.h"
-#include "user_account.h"
-#include "mythread.h"
-#include <iostream>
+#include "..\header\user_account.h"
+#include "..\header\mythread.h"
+#include <QFile>
+using namespace std;
 send_page::send_page(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::send_page)
@@ -11,9 +12,9 @@ send_page::send_page(QWidget *parent) :
     ui->setupUi(this);
     thread_sec = new get_thread();
     connect(thread_sec, SIGNAL(khalife()), this, SLOT(put()));
+//    connect(thread_sec, SIGNAL(khalife()), this, SLOT(write_in_file()));
     connect(this, SIGNAL(starty()), this, SLOT(put()));
     connect(this, SIGNAL(starty()), this, SLOT(start_thread()));
-
 }
 
 send_page::~send_page()
@@ -21,14 +22,22 @@ send_page::~send_page()
     delete ui;
 }
 
+
+
+
 void send_page::start_thread()
 {
-    thread_sec->start();
+    if(MyThread::isOnline())
+    {
+      thread_sec->start();
+    }
 }
 
 void send_page::put()
 {
-    QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+name_send);
+    if(MyThread::isOnline())
+    {
+    QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+contact_send);
     MyThread *thread_2 = new MyThread(send_2,this);
     connect(thread_2, SIGNAL(finished()), thread_2, SLOT(deleteLater()));
     thread_2->start();
@@ -72,22 +81,20 @@ void send_page::put()
             ui->plainTextEdit->appendPlainText(src + " : " + body_main_message + "\n");
         }
     }
-    if (code == "401")
-        QMessageBox::warning(this , code , message);
-    //thread_sec->start();
+
+    }
+
 }
 
 void send_page::on_pushButton_clicked()
 {
     if(MyThread::isOnline())
     {
-        QUrl send("http://api.barafardayebehtar.ml:8080/sendmessage"+type_send+"?token="+token+"&dst="+name_send+"&body="+this->ui->lineEdit->text());
+        QUrl send("http://api.barafardayebehtar.ml:8080/sendmessage"+type_send+"?token="+token+"&dst="+contact_send+"&body="+this->ui->lineEdit->text());
         MyThread *thread = new MyThread(send,this);
         connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
         thread->start();
         thread->wait();
-        put();
-
     }
 
 }

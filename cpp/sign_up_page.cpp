@@ -1,4 +1,4 @@
-#include "sign_up_page.h"
+#include "..\header\sign_up_page.h"
 #include "ui_sign_up_page.h"
 #include<windows.h>
 #include<iostream>

@@ -11,26 +11,28 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    get_thread.cpp \
-    jjthread.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    mythread.cpp \
-    send_page.cpp \
-    sign_up_page.cpp \
-    user_account.cpp \
-    user_page.cpp
+    cpp/father_thread.cpp \
+    cpp/get_thread.cpp \
+    cpp/main.cpp \
+    cpp/mainwindow.cpp \
+    cpp/mythread.cpp \
+    cpp/send_page.cpp \
+    cpp/sign_up_page.cpp \
+    cpp/thread_write.cpp \
+    cpp/user_account.cpp \
+    cpp/user_page.cpp
 
 
 HEADERS += \
-    get_thread.h \
-    jjthread.h \
-    mainwindow.h \
-    mythread.h \
-    send_page.h \
-    sign_up_page.h \
-    user_account.h \
-    user_page.h
+    header/father_thread.h \
+    header/get_thread.h \
+    header/mainwindow.h \
+    header/mythread.h \
+    header/send_page.h \
+    header/sign_up_page.h \
+    header/thread_write.h \
+    header/user_account.h \
+    header/user_page.h
 
 FORMS += \
     mainwindow.ui \

@@ -40,5 +40,4 @@ public:
    QJsonObject jason_temp_thread;
 
 };
-
 #endif

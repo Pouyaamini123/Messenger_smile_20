@@ -1,10 +1,10 @@
 #ifndef GET_THREAD_H
 #define GET_THREAD_H
-#include "jjthread.h"
+#include "father_thread.h"
 #include "mythread.h"
 #include <QThread>
 
-class get_thread : public jjthread
+class get_thread : public father_thread
 {
 public:
     explicit get_thread();

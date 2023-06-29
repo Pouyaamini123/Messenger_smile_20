@@ -2016,7 +2016,7 @@ QScrollBar::sub-page:vertical
    </property>
    <property name="icon">
     <iconset resource="image.qrc">
-     <normaloff>:/new/prefix1/download (1).png</normaloff>:/new/prefix1/download (1).png</iconset>
+     <normaloff>:/new/prefix1/Images/creat.png</normaloff>:/new/prefix1/Images/creat.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -2039,7 +2039,7 @@ QScrollBar::sub-page:vertical
    </property>
    <property name="icon">
     <iconset resource="image.qrc">
-     <normaloff>:/new/prefix1/images (1).png</normaloff>:/new/prefix1/images (1).png</iconset>
+     <normaloff>:/new/prefix1/Images/send.png</normaloff>:/new/prefix1/Images/send.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -2062,7 +2062,7 @@ QScrollBar::sub-page:vertical
    </property>
    <property name="icon">
     <iconset resource="image.qrc">
-     <normaloff>:/new/prefix1/vector-logout-sign-icon.jpg</normaloff>:/new/prefix1/vector-logout-sign-icon.jpg</iconset>
+     <normaloff>:/new/prefix1/Images/log_out.jpg</normaloff>:/new/prefix1/Images/log_out.jpg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -2085,7 +2085,7 @@ QScrollBar::sub-page:vertical
    </property>
    <property name="icon">
     <iconset resource="image.qrc">
-     <normaloff>:/new/prefix1/download (2).png</normaloff>:/new/prefix1/download (2).png</iconset>
+     <normaloff>:/new/prefix1/Images/list.png</normaloff>:/new/prefix1/Images/list.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -2114,7 +2114,7 @@ QScrollBar::sub-page:vertical
    </property>
    <property name="icon">
     <iconset resource="image.qrc">
-     <normaloff>:/new/prefix1/download.png</normaloff>:/new/prefix1/download.png</iconset>
+     <normaloff>:/new/prefix1/Images/join.png</normaloff>:/new/prefix1/Images/join.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -2203,7 +2203,7 @@ QScrollBar::sub-page:vertical
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>200</y>
       <width>191</width>
       <height>31</height>

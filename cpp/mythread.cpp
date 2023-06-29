@@ -1,4 +1,4 @@
-#include "mythread.h"
+#include "..\header\mythread.h"
 
 MyThread::MyThread(QUrl url,QObject *parent) :
     QThread(parent)

@@ -1,10 +1,11 @@
-#include "user_account.h"
+#include "..\header\user_account.h"
 QString token;
 QString username_glob;
 QString password_glob;
 QJsonObject jason_asli_glob;
-QString name_send;
+QString contact_send;
 QString type_send;
 QString user_name;
 QString all_mess;
 int county = 0 ;
+mme temp_mme;
