@@ -12,7 +12,6 @@ send_page::send_page(QWidget *parent) :
     ui->setupUi(this);
     thread_sec = new get_thread();
     connect(thread_sec, SIGNAL(khalife()), this, SLOT(put()));
-//    connect(thread_sec, SIGNAL(khalife()), this, SLOT(write_in_file()));
     connect(this, SIGNAL(starty()), this, SLOT(put()));
     connect(this, SIGNAL(starty()), this, SLOT(start_thread()));
 }
@@ -21,9 +20,6 @@ send_page::~send_page()
 {
     delete ui;
 }
-
-
-
 
 void send_page::start_thread()
 {
@@ -83,7 +79,35 @@ void send_page::put()
     }
 
     }
-
+    else{
+            std::string file_path = __FILE__;
+            std::string dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
+            dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
+            std::string address;
+            if(type_send=="user")
+                address = "Users";
+            if(type_send=="group")
+                address="Groups";
+            if(type_send=="channel")
+                address = "Channels";
+            dir_path += "\\" + address + "\\" +contact_send.toStdString() + ".txt";
+            ifstream test(dir_path);
+            while(true)
+            {
+                  test>>temp_mme.body;
+                  while(true){
+                  test>>temp_mme.src;
+                  if(temp_mme.src==contact_send.toStdString() || temp_mme.src==my_name.toStdString())
+                      break;
+                  else
+                      temp_mme.body+=temp_mme.src;
+                  }
+                  if(test.eof())
+                      break;
+                  QString hasel=QString::fromStdString(temp_mme.src)+" : "+ QString::fromStdString(temp_mme.body)+"\n";
+                  ui->plainTextEdit->appendPlainText(hasel);
+            }
+        }
 }
 
 void send_page::on_pushButton_clicked()
@@ -99,4 +123,9 @@ void send_page::on_pushButton_clicked()
 
 }
 
+void send_page::on_send_page_finished(int result)
+{
+    thread_sec->exit();
+    ui->plainTextEdit->clear();
+}
 

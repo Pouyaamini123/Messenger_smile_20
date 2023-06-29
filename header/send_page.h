@@ -25,6 +25,8 @@ public slots:
     void start_thread();
 private slots:
     void on_pushButton_clicked();
+    void on_send_page_finished(int result);
+
 private:
     get_thread * thread_sec;
     Ui::send_page *ui;

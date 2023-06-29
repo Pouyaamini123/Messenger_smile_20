@@ -10,11 +10,12 @@ extern QString contact_send;
 extern QString type_send;
 extern QString user_name;
 extern QString all_mess;
+extern QString my_name;
 extern int county; 
 struct mme
 {
-    QString src;
-    QString body;
+    std::string src;
+    std::string body;
 };
 extern mme temp_mme;
 #endif // USER_ACCOUNT_H

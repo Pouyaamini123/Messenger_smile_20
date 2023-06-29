@@ -215,9 +215,9 @@ void thread_write::run()
                             dst =  body_obj.value("dst").toString();
                             body_main_message = body_obj.value("body").toString();
                             date = body_obj.value("date").toString();
-                            temp_mme.src = src ;
-                            temp_mme.body = body_main_message;
-                            test<<temp_mme.body.toStdString()<<temp_mme.src.toStdString();
+                            temp_mme.src = src.toStdString() ;
+                            temp_mme.body = body_main_message.toStdString();
+                            test<<temp_mme.body<<" "<<temp_mme.src<<" ";
 
                         }
                         //File_ptr.close();
@@ -228,6 +228,6 @@ void thread_write::run()
                 }
        }
     }
-//    if(!MyThread::isOnline())
-//        this->exit();
+    if(!MyThread::isOnline())
+        this->exit();
 }
