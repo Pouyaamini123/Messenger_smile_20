@@ -3,6 +3,7 @@
 #include "..\header\user_account.h"
 #include "..\header\mythread.h"
 #include <QFile>
+
 using namespace std;
 send_page::send_page(QWidget *parent) :
     QDialog(parent),
@@ -11,9 +12,9 @@ send_page::send_page(QWidget *parent) :
 
     ui->setupUi(this);
     thread_sec = new get_thread();
+    thread_3 = new thread10;
     connect(thread_sec, SIGNAL(khalife()), this, SLOT(put()));
-    connect(this, SIGNAL(starty()), this, SLOT(put()));
-    connect(this, SIGNAL(starty()), this, SLOT(start_thread()));
+    connect(this, SIGNAL(starty()), this, SLOT(pakhsh()));
 }
 
 send_page::~send_page()
@@ -21,13 +22,6 @@ send_page::~send_page()
     delete ui;
 }
 
-void send_page::start_thread()
-{
-    if(MyThread::isOnline())
-    {
-      thread_sec->start();
-    }
-}
 
 void send_page::put()
 {
@@ -77,39 +71,57 @@ void send_page::put()
             ui->plainTextEdit->appendPlainText(src + " : " + body_main_message + "\n");
         }
     }
-
     }
-    else{
-            std::string file_path = __FILE__;
-            std::string dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
-            dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
-            std::string address;
-            if(type_send=="user")
-                address = "Users";
-            if(type_send=="group")
-                address="Groups";
-            if(type_send=="channel")
-                address = "Channels";
-            dir_path += "\\" + address + "\\" +contact_send.toStdString() + ".txt";
-            ifstream test(dir_path);
-            while(true)
-            {
-                  test>>temp_mme.body;
-                  while(true){
-                  test>>temp_mme.src;
-                  if(temp_mme.src==contact_send.toStdString() || temp_mme.src==my_name.toStdString())
-                      break;
-                  else
-                      temp_mme.body+=temp_mme.src;
-                  }
-                  if(test.eof())
-                      break;
-                  QString hasel=QString::fromStdString(temp_mme.src)+" : "+ QString::fromStdString(temp_mme.body)+"\n";
-                  ui->plainTextEdit->appendPlainText(hasel);
-            }
-        }
 }
 
+void send_page::pakhsh()
+{
+    if(MyThread::isOnline())
+    {
+        thread_sec->start();
+        put();
+    }
+    else
+    {
+        offlinemod();
+    }
+
+}
+
+void send_page::offlinemod()
+{
+    std::string file_path = __FILE__;
+    std::string dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
+    dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
+    std::string address;
+    if(type_send=="user")
+        address = "Users";
+    if(type_send=="group")
+        address="Groups";
+    if(type_send=="channel")
+        address = "Channels";
+    dir_path += "\\" + address + "\\" +contact_send.toStdString() + ".txt";
+    ifstream test(dir_path);
+
+    while(true)
+    {
+          test>>temp_mme.body;
+          while(true){
+          test>>temp_mme.src;
+          if(temp_mme.src==contact_send.toStdString() || temp_mme.src==my_name.toStdString())
+              break;
+          else
+              temp_mme.body+=temp_mme.src;
+          }
+          if(test.eof())
+              break;
+          QString hasel=QString::fromStdString(temp_mme.src)+" : "+ QString::fromStdString(temp_mme.body)+"\n";
+          ui->plainTextEdit->appendPlainText(hasel);
+    }
+    thread_3->start();
+    //thread_3->wait();
+
+}
 void send_page::on_pushButton_clicked()
 {
     if(MyThread::isOnline())
@@ -118,9 +130,7 @@ void send_page::on_pushButton_clicked()
         MyThread *thread = new MyThread(send,this);
         connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
         thread->start();
-        thread->wait();
     }
-
 }
 
 void send_page::on_send_page_finished(int result)

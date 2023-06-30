@@ -41,7 +41,7 @@ void MainWindow::on_pushButton_2_clicked()
     {
         for(i;i<=i1;i++)
         {
-            Sleep(40);
+            Sleep(10);
             ui->progressBar->setValue(i);
         }
 
@@ -60,10 +60,10 @@ void MainWindow::on_pushButton_2_clicked()
         i1=rand()%20+20+i1;
         for(i;i<=i1;i++)
         {
-            Sleep(40);
+            Sleep(10);
             ui->progressBar->setValue(i);
         }
-        Sleep(500);
+        Sleep(50);
 
         QJsonObject temp  = thread->jason_temp_thread;
         token = temp.value("token").toString();
@@ -73,7 +73,7 @@ void MainWindow::on_pushButton_2_clicked()
         {
             for( i;i<101;i++)
             {
-                Sleep(40);
+                Sleep(10);
                 ui->progressBar->setValue(i);
            }
 
@@ -92,6 +92,7 @@ void MainWindow::on_pushButton_2_clicked()
             ui->lineEdit_2->setText("");
             ui->lineEdit->setText("");
         }
+        ui->progressBar->setValue(0);
     }
     else
     {
@@ -103,7 +104,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::write_in_files()
 {
-    thread_write * ptr = new thread_write();
+    ptr = new thread_write();
     ptr->start();
 }
 

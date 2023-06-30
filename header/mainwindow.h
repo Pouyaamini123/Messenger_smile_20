@@ -26,6 +26,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     static void move_back();
+
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
@@ -33,6 +34,7 @@ private slots:
 signals:
     void khelafat();
 private:
+    thread_write * ptr;
     Ui::MainWindow *ui;
     Sign_Up_Page *sign_page;
     User_Page *user_page;

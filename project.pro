@@ -20,7 +20,9 @@ SOURCES += \
     cpp/sign_up_page.cpp \
     cpp/thread_write.cpp \
     cpp/user_account.cpp \
-    cpp/user_page.cpp
+    cpp/user_page.cpp \
+    cpp/thread10.cpp
+
 
 
 HEADERS += \
@@ -32,7 +34,9 @@ HEADERS += \
     header/sign_up_page.h \
     header/thread_write.h \
     header/user_account.h \
-    header/user_page.h
+    header/user_page.h \
+    header/thread10.h
+
 
 FORMS += \
     mainwindow.ui \

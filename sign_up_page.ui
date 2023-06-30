@@ -284,12 +284,15 @@ font: 700 24pt &quot;Segoe UI&quot;;</string>
     <rect>
      <x>170</x>
      <y>370</y>
-     <width>131</width>
+     <width>351</width>
      <height>23</height>
     </rect>
    </property>
    <property name="value">
     <number>0</number>
+   </property>
+   <property name="textVisible">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

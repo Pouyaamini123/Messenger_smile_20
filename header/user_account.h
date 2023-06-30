@@ -2,6 +2,7 @@
 #define USER_ACCOUNT_H
 #include <QString>
 #include <QJsonObject>
+#include<windows.h>
 extern QString token;
 extern QString username_glob;
 extern QString password_glob;

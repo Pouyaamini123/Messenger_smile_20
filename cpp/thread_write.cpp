@@ -5,8 +5,8 @@ using namespace std;
 
 void thread_write::run()
 {
-    while(MyThread::isOnline())
-     {
+    //while(MyThread::isOnline())
+    //{
 
             int channels_number , groups_number , users_number;
             std::string * channels_names;
@@ -117,12 +117,7 @@ void thread_write::run()
                         }
 
                     }
-                    //          if (code == "204")
-                    //               //QMessageBox::warning(this , code , message);
-                    //          if (code == "404")
-                    //             // QMessageBox::warning(this , code , message);
-                    //          if (code == "401")
-                    //             // QMessageBox::warning(this , code , message);
+                            // QMessageBox::warning(this , code , message);
 
                 }
                 else
@@ -226,8 +221,8 @@ void thread_write::run()
                     //         if (code == "401")
                     //             //QMessageBox::warning(this , code , message);
                 }
-       }
-    }
+            }
+
     if(!MyThread::isOnline())
         this->exit();
 }

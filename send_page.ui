@@ -400,6 +400,9 @@ QCheckBox::indicator:disabled
 }
 </string>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPlainTextEdit" name="plainTextEdit_2">
    <property name="geometry">
