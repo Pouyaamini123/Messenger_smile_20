@@ -5,5 +5,6 @@
         <file>Images/list.png</file>
         <file>Images/log_out.jpg</file>
         <file>Images/send.png</file>
+        <file>Images/MIB.ico</file>
     </qresource>
 </RCC>

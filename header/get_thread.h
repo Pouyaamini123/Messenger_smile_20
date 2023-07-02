@@ -9,7 +9,7 @@ class get_thread : public father_thread
 public:
     explicit get_thread();
     void run() override;
-    int h=0;
+    int message_number = 0;
 };
 
 #endif // GET_THREAD_H

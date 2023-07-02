@@ -10,6 +10,18 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>812</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>812</width>
+    <height>700</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -462,11 +474,6 @@ QScrollBar::sub-page:vertical
 }
 </string>
     </property>
-    <item>
-     <property name="text">
-      <string>&lt;none&gt;</string>
-     </property>
-    </item>
     <item>
      <property name="text">
       <string>Channel</string>
@@ -1064,7 +1071,7 @@ QScrollBar::sub-page:vertical
       <x>599</x>
       <y>210</y>
       <width>101</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -1381,13 +1388,6 @@ QScrollBar::sub-page:vertical
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout"/>
      </item>
-     <item>
-      <widget class="QScrollBar" name="verticalScrollBar">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QComboBox" name="comboBox_3">
@@ -1700,11 +1700,6 @@ QScrollBar::sub-page:vertical
     </property>
     <item>
      <property name="text">
-      <string>&lt;none&gt;</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>Channel</string>
      </property>
     </item>
@@ -1997,7 +1992,7 @@ QScrollBar::sub-page:vertical
       <x>350</x>
       <y>130</y>
       <width>101</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -2209,7 +2204,7 @@ QScrollBar::sub-page:vertical
       <x>300</x>
       <y>200</y>
       <width>191</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -2227,11 +2222,6 @@ QScrollBar::sub-page:vertical
     </property>
     <item>
      <property name="text">
-      <string>noun</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>user</string>
      </property>
     </item>
@@ -2243,16 +2233,6 @@ QScrollBar::sub-page:vertical
     <item>
      <property name="text">
       <string>channel</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string/>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string/>
      </property>
     </item>
    </widget>
@@ -2269,14 +2249,14 @@ QScrollBar::sub-page:vertical
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>220</x>
       <y>70</y>
       <width>81</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>enter name</string>
+     <string>Name :</string>
     </property>
    </widget>
   </widget>

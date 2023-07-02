@@ -9,12 +9,12 @@ send_page::send_page(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::send_page)
 {
-
     ui->setupUi(this);
     thread_sec = new get_thread();
-    thread_3 = new thread10;
     connect(thread_sec, SIGNAL(khalife()), this, SLOT(put()));
     connect(this, SIGNAL(starty()), this, SLOT(pakhsh()));
+    this->setWindowTitle("Send Page");
+    this->ui->pushButton->setDefault(1);
 }
 
 send_page::~send_page()
@@ -25,6 +25,8 @@ send_page::~send_page()
 
 void send_page::put()
 {
+    ui->lineEdit->show();
+    ui->pushButton->show();
     if(MyThread::isOnline())
     {
     QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+contact_send);
@@ -43,7 +45,6 @@ void send_page::put()
         fin++;
     }
     last = --fin;
-    //int count = temp_string[fin] - '0';
     sub_str = temp_string.substr(first , last - first + 1);
     int count = stoi(sub_str);
     QString message = temp.value("message").toString();
@@ -90,6 +91,8 @@ void send_page::pakhsh()
 
 void send_page::offlinemod()
 {
+    ui->lineEdit->hide();
+    ui->pushButton->hide();
     std::string file_path = __FILE__;
     std::string dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
     dir_path = file_path.substr(0, file_path.rfind("\\cpp"));
@@ -102,35 +105,40 @@ void send_page::offlinemod()
         address = "Channels";
     dir_path += "\\" + address + "\\" +contact_send.toStdString() + ".txt";
     ifstream test(dir_path);
-
+    string tashkish;
     while(true)
     {
           test>>temp_mme.body;
-          while(true){
-          test>>temp_mme.src;
-          if(temp_mme.src==contact_send.toStdString() || temp_mme.src==my_name.toStdString())
-              break;
-          else
-              temp_mme.body+=temp_mme.src;
+          test>>tashkish;
+          while(tashkish!="#^&*&^#"){
+              temp_mme.body+=tashkish;
+              test>>tashkish;
           }
+          test>>temp_mme.src;
           if(test.eof())
               break;
           QString hasel=QString::fromStdString(temp_mme.src)+" : "+ QString::fromStdString(temp_mme.body)+"\n";
           ui->plainTextEdit->appendPlainText(hasel);
     }
-    thread_3->start();
-    //thread_3->wait();
-
 }
 void send_page::on_pushButton_clicked()
 {
-    if(MyThread::isOnline())
-    {
-        QUrl send("http://api.barafardayebehtar.ml:8080/sendmessage"+type_send+"?token="+token+"&dst="+contact_send+"&body="+this->ui->lineEdit->text());
-        MyThread *thread = new MyThread(send,this);
-        connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-        thread->start();
+    try{
+        if(ui->lineEdit->text() == "")
+            throw std::invalid_argument("Nothing To Send");
+        if(MyThread::isOnline())
+        {
+            QUrl send("http://api.barafardayebehtar.ml:8080/sendmessage"+type_send+"?token="+token+"&dst="+contact_send+"&body="+this->ui->lineEdit->text());
+            MyThread *thread = new MyThread(send,this);
+            connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+            thread->start();
+            thread->wait();
+        }
     }
+    catch (std::exception & e)
+        {
+            QMessageBox::warning(this , "Error" , e.what());
+        }
 }
 
 void send_page::on_send_page_finished(int result)

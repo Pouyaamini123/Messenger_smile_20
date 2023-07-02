@@ -13,6 +13,12 @@ extern QString user_name;
 extern QString all_mess;
 extern QString my_name;
 extern int county; 
+extern QString *userha;
+extern int userhas;
+extern int channelhas;
+extern int grouphas;
+extern QString *channelha;
+extern QString *groupha;
 struct mme
 {
     std::string src;

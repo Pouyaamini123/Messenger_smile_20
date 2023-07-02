@@ -29,7 +29,6 @@ private slots:
 
 private:
     get_thread * thread_sec;
-    thread10 * thread_3;
     Ui::send_page *ui;
 };
 struct last

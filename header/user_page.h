@@ -35,6 +35,7 @@ private slots:
     void on_pushButton_14_clicked();
     void on_User_Page_finished(int result);
 
+
 private:
     int creat;
     int join;

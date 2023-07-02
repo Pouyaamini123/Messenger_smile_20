@@ -36,6 +36,7 @@ signals:
 public slots:
     static bool isOnline();
 private:
+
    QUrl temp;
 public:
    QJsonObject jason_temp_thread;
