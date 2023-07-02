@@ -14,6 +14,7 @@
 #include "user_page.h"
 #include "user_account.h"
 #include "..\header\thread_write.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -26,16 +27,19 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     static void move_back();
+    void update();
+
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
     void write_in_files();
 signals:
-    void khelafat();
+    void ready_write_file();
 private:
+
     Ui::MainWindow *ui;
     Sign_Up_Page *sign_page;
     User_Page *user_page;
-
+    thread_write * ptr;
 };
 #endif // MAINWINDOW_H

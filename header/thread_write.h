@@ -10,4 +10,4 @@ class thread_write : public QThread
 public:
     void run() override;
 };
-#endif // THREAD_WRITE_H
+#endif

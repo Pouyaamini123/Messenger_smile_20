@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>510</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -197,9 +197,9 @@ QCheckBox::indicator:disabled
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>130</y>
-     <width>349</width>
+     <x>130</x>
+     <y>110</y>
+     <width>351</width>
      <height>183</height>
     </rect>
    </property>
@@ -213,7 +213,7 @@ QCheckBox::indicator:disabled
 font: 700 24pt &quot;Segoe UI&quot;;</string>
         </property>
         <property name="text">
-         <string>  Sign Up Security</string>
+         <string>      Sign Up Security</string>
         </property>
        </widget>
       </item>
@@ -253,13 +253,29 @@ font: 700 24pt &quot;Segoe UI&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QProgressBar" name="progressBar_1">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>320</y>
-     <width>271</width>
-     <height>30</height>
+     <x>130</x>
+     <y>350</y>
+     <width>351</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="textVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>300</y>
+     <width>351</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -278,19 +294,6 @@ font: 700 24pt &quot;Segoe UI&quot;;</string>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QProgressBar" name="progressBar_1">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>370</y>
-     <width>131</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
   </widget>
  </widget>
  <resources/>

@@ -2,15 +2,15 @@
 
 get_thread::get_thread()
 {
-
+    this->message_number = 0;
 }
 
 void get_thread::run()
 {
-    while(true)
+    while(MyThread::isOnline())
     {
         QUrl send_2("http://api.barafardayebehtar.ml:8080/get"+type_send+"chats?token="+token+"&dst="+contact_send);
-        MyThread *thread_2 = new MyThread(send_2,this);
+        MyThread *thread_2 = new MyThread(send_2);
         connect(thread_2, SIGNAL(finished()), thread_2, SLOT(deleteLater()));
         thread_2->start();
         thread_2->wait();
@@ -29,10 +29,11 @@ void get_thread::run()
         sub_str = temp_string.substr(first , last - first + 1);
         int count = stoi(sub_str);
 
-        if(h!=count)
+        if(message_number!=count)
         {
-            h=count;
+            message_number=count;
             emit khalife();
         }
     }
+    this->exit();
 }

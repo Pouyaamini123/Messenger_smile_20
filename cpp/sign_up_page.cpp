@@ -8,6 +8,8 @@ Sign_Up_Page::Sign_Up_Page(QWidget *parent) :
     ui(new Ui::Sign_Up_Page)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Sign up Page");
+    this->ui->pushButton_3->setDefault(1);
 }
 
 Sign_Up_Page::~Sign_Up_Page()
@@ -25,15 +27,19 @@ void Sign_Up_Page::on_pushButton_2_clicked()
 
 void Sign_Up_Page::on_pushButton_3_clicked()
 {
+ try
+    {
+        if(ui->lineEdit_2->text() == "" || ui->lineEdit->text() == "")
+            throw std::invalid_argument("Name or Password is Empty");
     int i=0;
     int i1;
     i1=rand()%20+20;
     ui->progressBar_1->show();
-
-   if(MyThread::isOnline()) {
+   if(MyThread::isOnline())
+   {
        for(i;i<=i1;i++)
        {
-           Sleep(40);
+           Sleep(10);
            ui->progressBar_1->setValue(i);
        }
 
@@ -43,10 +49,10 @@ void Sign_Up_Page::on_pushButton_3_clicked()
         i1=rand()%20+20+i1;
         for(i;i<=i1;i++)
         {
-            Sleep(40);
+            Sleep(10);
             ui->progressBar_1->setValue(i);
         }
-        Sleep(500);
+        Sleep(50);
 
         thread->start();
         thread->wait();
@@ -56,21 +62,28 @@ void Sign_Up_Page::on_pushButton_3_clicked()
         if (code == "200"){
             for( i;i<101;i++)
             {
-                Sleep(40);
+                Sleep(10);
                 ui->progressBar_1->setValue(i);
            }
             QMessageBox::information(this , code , message);
-        this->close();}
-        if (code == "401")
+            this->close();
+        }
+        if (code== "204")
             QMessageBox::warning(this , code , message);
         ui->lineEdit_2->setText("");
         ui->lineEdit->setText("");
         ui->progressBar_1->setValue(0);
+        ui->progressBar_1->setValue(0);
     }
-   else
-   {
-       QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
-   }
+       else
+       {
+           QMessageBox::warning(this , "InterNet Connection " ," You Are Not Connected To Interted");
+       }
+}
+catch (std::exception & e)
+    {
+        QMessageBox::warning(this , "Error" , e.what());
+    }
 }
 
 

@@ -2,6 +2,7 @@
 #define SEND_PAGE_H
 #include "user_account.h"
 #include "get_thread.h"
+#include "thread10.h"
 #include <fstream>
 #include <QDialog>
 #include<fstream>
@@ -16,15 +17,16 @@ class send_page : public QDialog
 public:
     explicit send_page(QWidget *parent = nullptr);
     ~send_page();
-
+    void offlinemod();
 signals:
     void starty();
 public slots:
     void put();
-//    void write_in_file();
-    void start_thread();
+    void pakhsh();
 private slots:
     void on_pushButton_clicked();
+    void on_send_page_finished(int result);
+
 private:
     get_thread * thread_sec;
     Ui::send_page *ui;

@@ -5,7 +5,7 @@ QT       += core network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
-
+CONFIG += libarchivd
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
@@ -18,9 +18,10 @@ SOURCES += \
     cpp/mythread.cpp \
     cpp/send_page.cpp \
     cpp/sign_up_page.cpp \
-    cpp/thread_write.cpp \
     cpp/user_account.cpp \
-    cpp/user_page.cpp
+    cpp/user_page.cpp \
+    cpp/thread_write.cpp
+
 
 
 HEADERS += \
@@ -30,9 +31,10 @@ HEADERS += \
     header/mythread.h \
     header/send_page.h \
     header/sign_up_page.h \
-    header/thread_write.h \
     header/user_account.h \
-    header/user_page.h
+    header/user_page.h \
+    header/thread_write.h
+
 
 FORMS += \
     mainwindow.ui \
@@ -47,3 +49,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     image.qrc
+
+win32:RC_ICONS += images\MIB.ico

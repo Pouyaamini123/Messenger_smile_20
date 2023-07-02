@@ -49,8 +49,8 @@ bool MyThread::isOnline()
     QTimer timeoutTimer;
     connect(&timeoutTimer, SIGNAL(timeout()), &loop, SLOT(quit()));
     connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
-    timeoutTimer.setSingleShot(true);
-    timeoutTimer.start(3000);
+//    timeoutTimer.setSingleShot(true);
+//    timeoutTimer.start(100000);
     loop.exec();
     if (reply->bytesAvailable())
     {

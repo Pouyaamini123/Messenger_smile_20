@@ -15,6 +15,7 @@
 #include <QEventLoop>
 #include <QTimer>
 #include "user_account.h"
+
 class MyThread : public QThread
 {
     Q_OBJECT
@@ -35,6 +36,7 @@ signals:
 public slots:
     static bool isOnline();
 private:
+
    QUrl temp;
 public:
    QJsonObject jason_temp_thread;

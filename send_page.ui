@@ -7,8 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>1198</width>
-    <height>645</height>
+    <height>525</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1198</width>
+    <height>525</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1198</width>
+    <height>525</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -188,7 +200,7 @@ QCheckBox::indicator:disabled
      <x>350</x>
      <y>430</y>
      <width>471</width>
-     <height>24</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="inputMask">
@@ -198,7 +210,7 @@ QCheckBox::indicator:disabled
     <string/>
    </property>
    <property name="placeholderText">
-    <string>enter pm</string>
+    <string>Message ...</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -207,7 +219,7 @@ QCheckBox::indicator:disabled
      <x>830</x>
      <y>430</y>
      <width>91</width>
-     <height>25</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -399,6 +411,9 @@ QCheckBox::indicator:disabled
 
 }
 </string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPlainTextEdit" name="plainTextEdit_2">
