@@ -174,9 +174,9 @@ void User_Page::on_pushButton_7_clicked()
                     else
                         text = object_mes.value("src").toString();
 
-                    /*********/
+
                     ui->textEdit->append(text+"\n");
-                    /*********/
+
                     block = "block ";
                 }
 
@@ -197,7 +197,7 @@ void User_Page::on_pushButton_7_clicked()
     }
 
 
-void User_Page::on_pushButton_8_clicked() // join
+void User_Page::on_pushButton_8_clicked()
 {
    try {
         if(ui->lineEdit_3->text() == "" )
@@ -205,6 +205,7 @@ void User_Page::on_pushButton_8_clicked() // join
         QString typy , address;
         if(ui->comboBox_2->currentText()=="Channel" )
         {
+
             typy = "channel";
         }
 
@@ -548,6 +549,12 @@ void User_Page::on_pushButton_14_clicked() // send
         }
         else
         {
+            for(i;i<=i1;i++)
+            {
+                Sleep(10);
+                ui->progressBar->setValue(i);
+            }
+            Sleep(100);
             if(type_send=="channel")
             {
                 for(int i=0;i<channelhas;i++)
@@ -572,6 +579,13 @@ void User_Page::on_pushButton_14_clicked() // send
                         state=1;
                 }
             }
+            i1=rand()%20+20+i1;
+            for(i;i<=i1;i++)
+            {
+                Sleep(10);
+                ui->progressBar->setValue(i);
+            }
+            Sleep(50);
             if(state==0)
                 QMessageBox::warning(this ,"Error", "This contact was not found to update log out and log in again.");
 
